@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style04.css" rel="stylesheet">
+    <script src="js/script06.js" defer></script>
+</head>
+
+<body>
+
+    <body>
+        <div class="header">
+            <button id="toggle-lang">Switch to English</button>
+            <button id="dark-mode-toggle">Light Mode</button>
+            <button id="music-toggle">🔈 Enable music</button>
+            <div id="clock">00:00:00</div>
+            <div id="date">jj/mm/aaaa</div>
+        </div>
+        <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+        <div class="container fade-in">
+            <h1>La cible, faire un carton</h1>
+            <div class="timer">
+                <span id="time-remaining">05:00</span>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+            <div class="audio-container fade-in fade-in-delay-1">
+                <div class="audio-section">
+                    <h3>Instructions</h3>
+                    <p>À l'atelier de la prison, les prisonniers confectionnent notamment des emballages en carton «
+                        recyclé ». Théo sera chargé de détourner de petites quantités de colle et les autres devront
+                        récupérer des chutes de carton de différentes formes. Bien agencées, elles constitueront un
+                        carré de la hauteur exacte de la grille d'aération.
+                    </p>
+                </div>
+                <div class="puzzle-info">
+                    <p id="puzzle-instruction">reconstituer ce puzzle</p>
+                </div>
+
+                <div class="puzzle-container">
+                    <div class="puzzle-board" id="puzzleBoard">
+                    </div>
+                </div>
+
+                <div class="success-message" id="successMessage">
+                    <h3>🎉 Puzzle résolu avec succès! 🎉</h3>
+                    <p>Vous pouvez maintenant passer à l'étape suivante.</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn" id="resetBtn">Réinitialiser</button>
+                    <button class="btn" id="nextBtn" disabled>Étape suivante</button>
+                </div>
+            </div>
+    </body>
+
+</html>

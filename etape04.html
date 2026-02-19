@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script04.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>L'élite au panier</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>Dès le réveil, sans ménagement et à 5 h 30 de surcroît, Tony partage sa découverte avec ses voisins
+                    de cellule, puis avec les trois autres prisonniers au réfectoire.
+                    Ceux-ci ne semblent pas faire grand cas de tous ces mystères et veulent savoir si les cellules du
+                    bloc de Tony sont identiques aux leurs.
+                    Chacun y va de sa description et explique à Tony avoir vu de petits chiffres partout.
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>Déchiffrer la carte et repérer un endroit précis dans l'une des cellules.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="container fade-in fade-in-delay-3">
+        <h2>Faites votre choix</h2>
+
+        <div class="choices-container">
+            <div class="choice-box">
+                <h3>Image #1</h3>
+                <ul class="prisoner-list">
+                    <li>1.<img src="./images/alcatraz16.jpg" alt="Frank Morris"></li>
+                </ul>
+                <button class="btn" onclick="makeChoice('echec.html')">Choisir cette image</button>
+            </div>
+
+            <div class="choice-box">
+                <h3>Image #2</h3>
+                <ul class="prisoner-list">
+                    <li>2.<img src="./images/alcatraz15.jpg" alt="Frank Morris"></li>
+                </ul>
+                <button class="btn" onclick="makeChoice('echec.html')">Choisir cette image</button>
+            </div>
+
+            <div class="choice-box">
+                <h3>Image #3</h3>
+                <ul class="prisoner-list">
+                    <li>3.<img src="./images/alcatraz14.jpg" alt="Frank Morris"></li>
+                </ul>
+                <button class="btn" onclick="makeChoice('etape05.html')">Choisir cette image</button>
+            </div>
+        </div>
+    </div>
+    <div id="hintModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Indice</h2>
+            <p id="hintText">Dechiffrer ce texte C134 pourr417 3xpliqu3r c3 chiffr3 3n 7rop. M415 d4n5 qu3ll3 c3llul3
+                ch3rch3r ? cella vous aidra.</p>
+        </div>
+    </div>
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img id="enlargedImage" src="" alt="Image agrandie">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La prison</title>
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="easter-egg" id="secret-button"></div>
+
+    <div class="modal" id="secret-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Message secret</h2>
+            <p>Vous avez trouvé un indice caché ! La combinaison du casier 42 est <span
+                    class="highlight">3-7-9-1</span>.
+                Gardez cette information précieusement pour votre évasion.</p>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <h1 class="typing-effect" id="main-title">Bienvenue à Alcatraz : L'île de l'impossible</h1>
+
+        <p>Nous sommes en 1962, au cœur de l'une des prisons les plus redoutées et les mieux gardées au monde :
+            <span class="highlight">Alcatraz</span>. Située sur une île isolée dans la baie de San Francisco, elle est
+            réputée pour être inéluctable. Les détenus qui y sont envoyés sont considérés comme les criminels les plus
+            dangereux des États-Unis. <span class="highlight">Vous</span> êtes l'un de ces prisonniers. Chaque mouvement
+            est surveillé, chaque
+            minute est cruciale, et le moindre faux pas pourrait sceller votre destin. Alcatraz regorge de secrets,
+            et tous les indices ne sont pas ce qu'ils semblent être. Alors méfiez-vous!
+        </p>
+
+        <p>Votre objectif : Déjouez les gardes, élucidez les mystères de la prison, et échappez-vous avant qu'il ne
+            soit trop tard. Alcatraz n'a jamais été conçu pour laisser quelqu'un s'enfuir... mais serez-vous
+            l'exception ?</p>
+
+        <nav>
+            <ul style="display: flex; align-items: center; gap: 20px; list-style: none; padding: 0;">
+                <li><a href="personnage.html" id="choose-character">Choisissez votre personnage</a></li>
+                <li>
+                    <select id="language-select">
+                        <option value="fr">Français</option>
+                        <option value="en">English</option>
+                        <option value="es">Español</option>
+                    </select>
+                </li>
+            </ul>
+        </nav>
+    </main>
+</body>
+
+</html>

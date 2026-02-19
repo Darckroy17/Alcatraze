@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script07.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>lettres et le Néant</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>« Pfiou ! Quel casse-tête.
+                    Il faut qu'on s'aire un peu la tête 。
+                    C'est l'heure du réfectoire : pour moi ce sera
+                    Vol-vent et emmental, ce midi !
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>trouver le message caché dans ce texte.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="chemin">
+        <div class="image-chemin">
+            <img src="./images/etape07.jpg" alt="Frank Morris">
+        </div>
+
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste d'olograme #1</h3>
+                    <ul class="prisoner-list">
+                        <li>1.cuillères</li>
+                        <li>2.aiguiser</li>
+                        <li>3.agrandissez</li>
+                        <li>4.soupirail</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape08.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste d'olograme #2</h3>
+                    <ul class="prisoner-list">
+                        <li>1.outil</li>
+                        <li>2.tranchant</li>
+                        <li>3.large</li>
+                        <li>4.libre</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+            </div>
+        </div>
+        <div id="hintModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Indice</h2>
+                <p id="hintText">Ces lettres constitueront 4 mots.</p>
+            </div>
+        </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="enlargedImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+</body>
+
+</html>

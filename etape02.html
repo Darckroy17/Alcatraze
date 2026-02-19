@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script02.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>Gare à ton matricule!</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>À son arrivée sur l'île, chacun des sept malfrats reçoit un matricule et un numéro de cellule. Tony
+                    Truand, au QI de 133 - et cette dernière unité n'est pas sans importance - y distingue un message
+                    caché :
+                    aurait-il un ami dans l'administration, un complice potentiel ?
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>trouver le signe apeçu par Tony Truand à la lecture des matricules et numeros de cellule.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+    <div class="chemin">
+        <div class="image-chemin">
+            <img src="./images/etape02.jpg" alt="Frank Morris">
+        </div>
+
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste d'olograme #1</h3>
+                    <ul class="prisoner-list">
+                        <li>1.SI</li>
+                        <li>2.IC</li>
+                        <li>3.NN</li>
+                        <li>4.VE</li>
+                        <li>5.AL</li>
+                        <li>6.OA</li>
+                        <li>7.EP</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste d'olograme #2</h3>
+                    <ul class="prisoner-list">
+                        <li>1.SI</li>
+                        <li>2.AL</li>
+                        <li>3.IC</li>
+                        <li>4.VE</li>
+                        <li>5.EP</li>
+                        <li>6.OA</li>
+                        <li>7.NN</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste d'olograme #3</h3>
+                    <ul class="prisoner-list">
+                        <li>1.EP</li>
+                        <li>2.VE</li>
+                        <li>3.AL</li>
+                        <li>4.SI</li>
+                        <li>5.IC</li>
+                        <li>6.OA</li>
+                        <li>7.NN</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape03.html')">Choisir cette liste</button>
+                </div>
+            </div>
+        </div>
+        <div id="hintModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Indice</h2>
+                <p id="hintText">Melanger les matricules cela poura vous mentrer la sortie.</p>
+            </div>
+        </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="enlargedImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+</body>
+
+</html>

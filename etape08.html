@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script08.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>Bruits de couloir</h1>
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>La stratégie est claire pour Tony : voler des cuillères au réfectoire, les aiguiser, s'en servir pour
+                    agrandir les dimensions de chaque grille d'aé-ration, puis recouvrir cette grille par une
+                    reproduction en carton pour que les gardiens n'y voient que du feu.
+                    «Je comprends mieux les schémas du carnet d'Al Capone, maintenant. On voit clairement cette galerie
+                    large d'un mètre et le sens pour s'en sortir. »
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>Interpréter les schémas du carnet d'Al Capone.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="chemin">
+        <div class="image-chemin">
+            <img src="./images/etape_08_01.jpg" alt="Frank Morris">
+            <img src="./images/etape_08_02.jpg" alt="Frank Morris">
+            <img src="./images/etape_08_03.jpg" alt="Frank Morris">
+            <img src="./images/etape_08_04.jpg" alt="Frank Morris">
+        </div>
+
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste de mots #1</h3>
+                    <ul class="prisoner-list">
+                        <li>1.peinture et cheveux </li>
+                        <li>2.cheveux et papier</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste de mots #2</h3>
+                    <ul class="prisoner-list">
+                        <li>1.papier-toilette </li>
+                        <li>2.peinture et cheveux</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape09.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste de mots #3</h3>
+                    <ul class="prisoner-list">
+                        <li>1.papier et cheveux </li>
+                        <li>2.toilette et cheveux </li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+            </div>
+        </div>
+        <div id="hintModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Indice</h2>
+                <p id="hintText">tout ces lettres = 4 mots.</p>
+            </div>
+        </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="enlargedImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+</body>
+
+</html>

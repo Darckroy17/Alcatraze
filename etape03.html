@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script03.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>L'ordre porté au pinacle</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>« Ce PÉLICAN n'est pas là par hasard, chuchote Tony.
+                    - Je crois comprendre, répond Alban, passionné d'oiseaux et qui parle plusieurs langues.
+                    Autrefois, tous les grands oiseaux de mer comme les pélicans, les fous de Bassan et les albatros
+                    étaient nommés indifféremment... « alcatraz ».
+                    - La carte promet donc une « ÉVASION d'ALCADRAZ ».
+                    s'exclame Alex.
+                    - Chut !
+                    - Il doit y avoir un autre message caché, risque Théo en se jetant sur ce qui lui servira de lit
+                    pour les trente prochaines années.›
+                    Extinction des feux Tony,à la ménoire visuelle infaillible et
+                    habitué à analyser des tas de données, ne s'endormira pas avant d'avoir percé ce mystère.
+                    Avant même que le jour ne se lève, son visage s'illumine. Eurêka !
+                    Il a identifié un personnage et découvert un nouveau mot de sept lettres très prometteur...
+                </p>
+            </div>
+
+                <div class="audio-section">
+                    <h3>Objectif</h3>
+                    <p>identifier la nouvelle carte et decouvrire le personage identifier par Tony.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="chemin">
+        <div class="image-chemin">
+            <img src="./images/etape03.jpg" alt="Frank Morris">
+        </div>
+
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste d'olograme #1</h3>
+                    <ul class="prisoner-list">
+                        <li>1.ALCAPONE, CALEPIN </li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape04.html')">Choisir ce mot</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste d'olograme #2</h3>
+                    <ul class="prisoner-list">
+                        <li>2. ALCAPONE, PINACLE </li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir ce mot</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste d'olograme #3</h3>
+                    <ul class="prisoner-list">
+                        <li>3.ALCAPONE, CANPILE</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir ce mot</button>
+                </div>
+            </div>
+        </div>
+        <div id="hintModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Indice</h2>
+                <p id="hintText">le titre est votre plus grand amie.</p>
+            </div>
+        </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="enlargedImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+</body>
+
+</html>

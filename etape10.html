@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prison</title>
+    <link href="css/style02.css" rel="stylesheet">
+    <script src="js/script10.js" defer></script>
+</head>
+
+<body>
+    <div class="header">
+        <button id="toggle-lang">Changer la langue</button>
+        <button id="dark-mode-toggle">Mode Clair</button>
+        <button id="music-toggle">🔈 Activer la musique</button>
+        <div id="music-selector" class="music-selector"></div>
+        <div id="clock">00:00:00</div>
+        <div id="date">jj/mm/aaaa</div>
+    </div>
+    <audio id="backgroundMusic" src="./audio/Prison_cell.mp3" loop preload="auto"></audio>
+
+    <div class="container fade-in">
+        <h1>Encore des trous</h1>
+
+        <div class="timer">
+            <span id="time-remaining">60:00</span>
+            <div class="progress-container">
+                <div id="progress-bar" class="progress-bar"></div>
+            </div>
+        </div>
+
+        <div class="audio-container fade-in fade-in-delay-1">
+            <div class="audio-section">
+                <h3>Instructions</h3>
+                <p>Il collectionne tous les articles du Figaro : ce n'est pas rien. On les coupe en
+                    quatre... pour rien ! Ils ont des oreilles mais n'entendent rien. C'est une activité fictive, un tir
+                    tactique ou un élément du calepin d'Al Capone qui indiquait comment masquer des lettres ne servant à
+                    rien.
+                </p>
+            </div>
+
+            <div class="audio-section">
+                <h3>Objectif</h3>
+                <p>Résoudre les énigmes et complétez le plan de Tony.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container fade-in fade-in-delay-2">
+        <div class="image-container">
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+        </div>
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+    </div>
+
+    <div class="chemin">
+        <div class="image-chemin">
+            <p>Puji est l'assistant du ........ de la prison, il pourra se charger des .......
+                Tarek est chargé par l'administration de repeindre en couleur chair les .... du dernier étage au-dessus
+                des cellules des détenus.
+                Il envoie exprès des gravats sur le sol. provoquant la colère des matons.
+                Il leur demande donc une .......... puis deux. puis trois pour sécuriser son lieu de travail et empécher
+                les chutes. Cela constituera une excellente cachette pour le matériel volumineux nécessaire à l'évasion.
+            </p>
+        </div>
+        <div class="container fade-in fade-in-delay-3">
+            <h2>Faites votre choix</h2>
+
+            <div class="choices-container">
+                <div class="choice-box">
+                    <h3>Liste de mots #1</h3>
+                    <ul class="prisoner-list">
+                        <li>1.cheveux </li>
+                        <li>2.murs</li>
+                        <li>3.couverture</li>
+                        <li>4.coiffeur</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste de mots #2</h3>
+                    <ul class="prisoner-list">
+                        <li>1.couverture</li>
+                        <li>2.murs</li>
+                        <li>3.cheveux</li>
+                        <li>4.coiffeur</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+                </div>
+
+                <div class="choice-box">
+                    <h3>Liste de mots #3</h3>
+                    <ul class="prisoner-list">
+                        <li>1.coiffeur</li>
+                        <li>2.cheveux</li>
+                        <li>3.murs</li>
+                        <li>4.couverture</li>
+                    </ul>
+                    <button class="btn" onclick="makeChoice('etape11.html')">Choisir cette liste</button>
+                </div>
+            </div>
+        </div>
+        <div id="hintModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Indice</h2>
+                <p id="hintText">Le nombre de points indique le nombres de lettres du mot recherché.</p>
+            </div>
+        </div>
+        <div id="imageModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <img id="enlargedImage" src="" alt="Image agrandie">
+            </div>
+        </div>
+</body>
+
+</html>

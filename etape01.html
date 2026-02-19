@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>prison</title>
+
+    <link href="css/style02.css" rel="stylesheet">
+
+    <script src="js/script01.js" defer></script>
+
+</head>
+
+
+
+<body>
+
+    <div class="header">
+
+
+        <button id="dark-mode-toggle">Mode Clair</button>
+
+        <button id="music-toggle">🔈 Activer la musique</button>
+
+        <div id="music-selector" class="music-selector"></div>
+
+        <div id="clock">00:00:00</div>
+
+        <div id="date">jj/mm/aaaa</div>
+
+    </div>
+
+    <audio id="ambientSound" src="./audio/prison_cell_door.mp3" preload="auto"></audio>
+
+    <audio id="backgroundMusic" src="./audio/Prison_cell_02.mp3" loop preload="auto"></audio>
+
+
+
+    <div class="container fade-in">
+
+        <h1>Transfert de Prisonnier</h1>
+
+
+
+        <div class="timer">
+
+            <span id="time-remaining">60:00</span>
+
+            <div class="progress-container">
+
+                <div id="progress-bar" class="progress-bar"></div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="audio-container fade-in fade-in-delay-1">
+
+            <div class="audio-section">
+
+                <h3>Instructions</h3>
+
+                <p>Le directeur Monk Ashow du pénitencier d'Atlanta n'en peut plus de ces sept détenus :
+
+                    Alban, Alex, Fuji, Phil, Tarek, Théo et Tony tentent sans cesse de se faire la malle.
+
+                    Avec le juge Itsu, ils décident de les envoyer-dans une prison dont personne ne s'évade : ALCATRAZ.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="audio-section">
+
+                <h3>Objectif</h3>
+
+                <p>identifier les 7 prisonniers transférés
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="container fade-in fade-in-delay-2">
+
+        <div class="image-container">
+
+            <img id="prisonerImage" src="./images/indice.jpg" alt="Indices" onclick="zoomImage(this)">
+
+        </div>
+
+
+
+        <button class="btn btn-secondary" id="hintButton">Afficher un indice</button>
+
+    </div>
+
+
+
+    <div class="container fade-in fade-in-delay-3">
+
+        <h2>Faites votre choix</h2>
+
+
+
+        <div class="choices-container">
+
+            <div class="choice-box">
+
+                <h3>Liste de prisonniers #1</h3>
+
+                <ul class="prisoner-list">
+
+                    <li>1. Alban Di</li>
+
+                    <li>2. Alex Houx</li>
+
+                    <li>3. Fuji Lusion</li>
+
+                    <li>4. Phil Mitard</li>
+
+                    <li>5. Tarek Plosif</li>
+
+                    <li>6. Théo Tif</li>
+
+                    <li>7. Tony Truand</li>
+
+                </ul>
+
+                <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+
+            </div>
+
+
+
+            <div class="choice-box">
+
+                <h3>Liste de prisonniers #2</h3>
+
+                <ul class="prisoner-list">
+
+                    <li>1. Alban Di</li>
+
+                    <li>2. Alex Houx</li>
+
+                    <li>3. Tarek Lusion</li>
+
+                    <li>4. Théo Mitard</li>
+
+                    <li>5. Fuji Plosif</li>
+
+                    <li>6. Phil Tif</li>
+
+                    <li>7. Tony Truand</li>
+
+                </ul>
+
+                <button class="btn" onclick="makeChoice('echec.html')">Choisir cette liste</button>
+
+            </div>
+
+
+
+            <div class="choice-box">
+
+                <h3>Liste de prisonniers #3</h3>
+
+                <ul class="prisoner-list">
+
+                    <li>1. Alban Di</li>
+
+                    <li>2. Phil Houx</li>
+
+                    <li>3. Tarek Lusion</li>
+
+                    <li>4. Théo Mitard</li>
+
+                    <li>5. Alex Plosif</li>
+
+                    <li>6. Fuji Tif</li>
+
+                    <li>7. Tony Truand</li>
+
+                </ul>
+
+                <button class="btn" onclick="makeChoice('etape02.html')">Choisir cette liste</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="hintModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <h2>Indice</h2>
+
+            <p id="hintText">Regardez attentivement les noms et prénoms de chaque prisonnier. Ils pourraient former un
+
+                message caché.</p>
+
+        </div>
+
+    </div>
+
+    <div id="imageModal" class="modal">
+
+        <div class="modal-content">
+
+            <span class="close">&times;</span>
+
+            <img id="enlargedImage" src="" alt="Image agrandie">
+
+        </div>
+
+    </div>
+
+</body>
+
+
+
+</html>
