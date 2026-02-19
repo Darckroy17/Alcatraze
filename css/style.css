@@ -1,0 +1,209 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+    background-image: url(/images/une_histoire_ile_alcatraz_prison.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    color: #ffffff;
+}
+
+main {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+main:hover {
+    transform: scale(1.01);
+}
+
+h1 {
+    color: #ffc107;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 2.2em;
+}
+
+p {
+    text-align: justify;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    text-align: left;
+    padding: 15px;
+    border-radius: 5px;
+    line-height: 1.8;
+    transition: background-color 0.3s ease;
+}
+
+p:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.highlight {
+    color: #ffc107;
+    font-weight: bold;
+}
+
+/* --- NAVIGATION ET BOUTONS --- */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Aligne verticalement le bouton et le select */
+    gap: 15px;
+    margin-top: 30px;
+}
+
+/* Style commun pour le bouton ET le sélecteur de langue */
+nav ul li a, 
+#language-select {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 25px;
+    border: 2px solid #ffc107;
+    border-radius: 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease;
+    display: inline-block;
+    font-family: inherit; /* Reprend la police du body */
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Style spécifique au select pour enlever le look "navigateur" */
+#language-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="%23ffc107"><path d="M0 0l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px; /* Espace pour la flèche */
+    outline: none;
+}
+
+/* Effets au survol (identiques) */
+nav ul li a:hover, 
+#language-select:hover {
+    background-color: #ffc107;
+    color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+}
+
+/* Style des options à l'intérieur du menu déroulant */
+#language-select option {
+    background-color: #333;
+    color: #fff;
+}
+
+nav ul li a:active {
+    transform: translateY(1px);
+}
+
+/* --- AUTRES ÉLÉMENTS (Modale, Easter Egg, etc.) --- */
+
+.easter-egg {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #ffdd79; 
+    border: 2px solid #000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    width: 80%;
+    position: relative;
+    color: #000; 
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #000;
+}
+
+.alarm-effect {
+    animation: flash 1s infinite;
+}
+
+@keyframes flash {
+    0%, 100% {
+        background-color: rgba(0, 0, 0, 0.7);
+    }
+    50% {
+        background-color: rgba(255, 0, 0, 0.5);
+    }
+}
+
+.typing-effect::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
